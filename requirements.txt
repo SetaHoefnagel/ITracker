@@ -1,0 +1,8 @@
+django
+django-admin
+django-celery
+django-cors-headers
+django-filter
+django-filer
+djangorestframework
+markdown
