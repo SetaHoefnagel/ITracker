@@ -6,9 +6,9 @@ Django, python and  what Kindermedicijn uses for projects.
 Before you start creating the application there are a couple of 
 requirements you should keep in mind:
 * Install the LTS of Ubuntu OS(On a seperate HardDisk) this is mandatory
-- Install Pycharm Community edition
+- Install Pycharm Community edition or Visual Studio Code
 - Install Git
-- Create a GitLab Account
+- Create a GitHub Account
 - Clone [this](https://gitlab.com/SetaHoefnagel/itracker.git) repository
 
 Beside these requirements you should have some basic knowledge of git, 
@@ -18,6 +18,7 @@ The following references can be used to gather information about the
 methods that are in use.
 * [Django tutorial](https://docs.djangoproject.com/en/2.1/intro/tutorial01/)
 * [Python basics](https://www.w3schools.com/python/) 
+* [Virtual Environments in Python](https://uoa-eresearch.github.io/eresearch-cookbook/recipe/2014/11/26/python-virtual-env/)
 * [HTML basics](https://www.w3schools.com/html/) 
 * [CSS basics](https://www.w3schools.com/css/) 
 * [Bootstrap 4 basics](https://www.w3schools.com/bootstrap4/)
@@ -25,6 +26,9 @@ methods that are in use.
 * [JS basics](https://www.w3schools.com/js/) 
 * [GitLab workflow](https://docs.gitlab.com/ee/workflow/gitlab_flow.html)
 * [REST API resource naming guide](https://restfulapi.net/resource-naming/)
+* [PyCharm](https://www.jetbrains.com/help/pycharm/quick-start-guide.html)
+* [Ubuntu](https://help.ubuntu.com/stable/ubuntu-help/getting-started.html.en)
+* [An Intro to Git and GitHub for Beginners](https://product.hubspot.com/blog/git-and-github-tutorial-for-beginners)
 
 ## Webapplication
 Webpack, React, TypeScript, Sass.
