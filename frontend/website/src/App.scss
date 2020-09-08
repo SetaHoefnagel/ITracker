@@ -1,0 +1,40 @@
+body {
+  background-color: #282c34;
+}
+
+header {
+  background: gold;
+  border-bottom: 2px solid #ddd;
+}
+
+.inline-logo {
+  height: 3rem;
+}
+
+.logo {
+  width: 100%;
+  height: auto;
+}
+
+.tracker {
+  background: 
+  linear-gradient(to left,#ffffffff, transparent) no-repeat, 
+  linear-gradient(to right, transparent,#ffffffff) no-repeat,
+    url(./files/images/man-deliver-package.jpg) left top no-repeat , 
+    url(./files/images/man-looking-at-tv-tablet-in-hand.jpg) right top no-repeat;
+    
+  min-height: 300px;
+  background-size: 50%, 100%, 50%, 100%;
+  position: relative;
+
+  .container {
+    padding-top: 200px;
+    padding-bottom: 200px;
+
+  }
+
+}
+
+footer {
+  z-index: 2;
+}

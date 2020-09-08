@@ -1,11 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './index.scss';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'jquery';
 import 'bootstrap/dist/js/bootstrap.js';
+
+window.loadPromise = new Promise(resolve => {
+    window.addEventListener('DOMContentLoaded', resolve)
+  })
+  
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
