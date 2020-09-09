@@ -1,0 +1,90 @@
+.parcel {
+    min-height: 300px;
+  
+    .parcel-info{
+      padding-left: 8px;
+      padding-right: 8px;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+    }
+  
+    .parcel-status {
+      display: grid;
+      grid-template-columns: repeat(11, 1fr);
+      padding-bottom: 20px;
+  
+      .status {
+        background: rgba(255, 255, 255, 0.7);
+        color: rgba(128, 128, 128, 0.7);
+        border-radius: 50%;
+        padding: 14px;
+        margin: 8px;
+        width: 64px;
+        height: 64px;
+        z-index: 2;
+        display: block;
+        position: relative;
+  
+        .text {
+          color: grey;
+          padding-top: 16px;
+        }
+  
+        .tooltiptext {
+          z-index: 100;
+          display: none;
+          color: white;
+        }
+  
+        > * {
+          width: auto;
+          height: auto;
+        }
+  
+        &.completed {
+          background-color: green;
+          color: white;
+  
+        }
+        &.active {
+          background-color: orange;
+          color: white;
+        }
+  
+        &:hover, &:focus {
+          background: white;
+          color: mediumblue;
+  
+          .tooltiptext {
+            display: inline;
+            position: absolute;
+            top: 70px;
+            width: 200px;
+            left: 0;
+            background: gray;
+            border-radius: 4px;
+            padding: 8px;
+          }
+        }
+      }
+      
+  
+      .line {
+        border-top: 4px solid white;
+        transform: translateY(50%);
+        margin: -10px; 
+        margin-top: -25%;
+        z-index: 1;
+  
+  
+        &.completed {
+          border-color: green;
+        }
+  
+        &.active {
+          border-color: orange;
+        }
+      }
+    }
+  
+  }
+  

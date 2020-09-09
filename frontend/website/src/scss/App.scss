@@ -1,0 +1,17 @@
+.main {
+    background: 
+    linear-gradient(to right, transparent 0%,#ffffffee 40%, #ffffffff 50%) no-repeat, 
+    url(./../files/images/man-deliver-package.jpg) left top no-repeat, 
+    linear-gradient(to right, #ffffffff 50%, #ffffffee 60%, transparent 100%) right no-repeat, 
+    url(./../files/images/man-looking-at-tv-tablet-in-hand.jpg) right top no-repeat,
+        ;
+    min-height: 600px;
+    background-size: 50% 100%;
+
+    position: relative;
+    
+    .container {
+        padding-top: 200px;
+        padding-bottom: 200px;
+    }
+}    

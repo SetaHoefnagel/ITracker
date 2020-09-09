@@ -7,6 +7,7 @@ class RecipientSerializer(serializers.HyperlinkedModelSerializer):
     full_name = serializers.SerializerMethodField()
     address = serializers.SerializerMethodField()
     telephone = serializers.SerializerMethodField()
+    l = lambda self,x: ''.join(['*' for y in x])
 
     def get_zip(self, obj):
         return obj.zip[:4]
@@ -15,11 +16,10 @@ class RecipientSerializer(serializers.HyperlinkedModelSerializer):
         return '%s. %s' % (obj.first_name[:1], obj.last_name)
 
     def get_address(self, obj):
-        l = lambda x: ''.join(['*' for y in x])
-        return '%s%s%s' % (obj.address[:1], l(obj.address[1:-4]), obj.address[-4::1])
+        return '%s%s%s' % (obj.address[:1], self.l(obj.address[1:-4]), obj.address[-4::1])
 
     def get_telephone(self, obj):
-        return '%s' % obj.telephone[4:]
+        return '%s%s' % (self.l(obj.telephone[:4]), obj.telephone[4:])
 
     class Meta:
         model = Recipient

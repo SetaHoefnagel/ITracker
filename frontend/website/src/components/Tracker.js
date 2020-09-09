@@ -3,10 +3,10 @@ import tracker_logo from './../files/images/itracker_logo.png'
 // import "react-loader-spinner/dist/loader/css/react-spinner-loader.css"
 import Loader from "react-loader-spinner-svg"
 import { Redirect } from 'react-router-dom'
+import './../scss/Tracker.scss';
+
 
 class Tracker extends Component {
-
-
   constructor(prop){
     super(prop);
     this.state = {
@@ -66,8 +66,6 @@ class Tracker extends Component {
               </p>
 
               <form className="form" onSubmit={this.submitForm}>
-                Tracker form
-
                 <div className="form-group">
                   <label>SDHL code: </label>
                   <div className="input-group mb-2">

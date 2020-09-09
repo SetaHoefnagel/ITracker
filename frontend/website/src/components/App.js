@@ -1,19 +1,21 @@
 import React from 'react';
-import logo from './files/images/logo.svg';
-import './App.scss';
-import Header from './components/Header.js';
-import Footer from './components/Footer.js';
-import Tracker from './components/Tracker.js';
-import Parcel from './components/Parcel.js';
+import logo from './../files/images/logo.svg';
+import './../scss/App.scss';
+import Header from './Header.js';
+import Footer from './Footer.js';
+import Tracker from './Tracker.js';
+import Parcel from './Parcel.js';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { Transition, TransitionGroup } from 'react-transition-group';
-import { play, exit } from './transitions'
+import { play, exit } from '../transitions'
 
 function App() {
   return (
     <BrowserRouter>
       <Header/>
-      <main className="tracker">
+      {/* TODO: Add an about route and handle redirection correct */}
+      
+      <main className="main">
         <div className="container">
           <div className="card bg-warning text-white">
             <div className="card-header">
