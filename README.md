@@ -1,6 +1,6 @@
 # ITracker
 The ITracker is a project that focusses on the core functionalities of 
-Django, python and  what Kindermedicijn uses for projects.  
+Django and Python.  
   
 ## Prerequisites
 Before you start creating the application there are a couple of 
