@@ -1,17 +1,45 @@
-from itracker.models import (Parcel, Recipient)
+from itracker.models import (Parcel, Recipient, ShippingStatus)
 from rest_framework import serializers
 
 
 class RecipientSerializer(serializers.HyperlinkedModelSerializer):
+    zip = serializers.SerializerMethodField()
+    full_name = serializers.SerializerMethodField()
+    address = serializers.SerializerMethodField()
+    telephone = serializers.SerializerMethodField()
+
+    def get_zip(self, obj):
+        return obj.zip[:4]
+
+    def get_full_name(self, obj):
+        return '%s. %s' % (obj.first_name[:1], obj.last_name)
+
+    def get_address(self, obj):
+        l = lambda x: ''.join(['*' for y in x])
+        return '%s%s%s' % (obj.address[:1], l(obj.address[1:-4]), obj.address[-4::1])
+
+    def get_telephone(self, obj):
+        return '%s' % obj.telephone[4:]
+
     class Meta:
         model = Recipient
-        fields = ['id', 'first_name', 'last_name', 'address', 'zip']
+        fields = ['id', 'full_name', 'telephone', 'address', 'zip']
+
+
+
+# Serializers define the API representation.
+class ShippingStatusSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = ShippingStatus
+        fields = ['status', 'updated', 'description']
 
 
 # Serializers define the API representation.
 class ParcelSerializer(serializers.HyperlinkedModelSerializer):
     recipient = RecipientSerializer()
+    shipping_statuses = ShippingStatusSerializer(many=True)
 
     class Meta:
         model = Parcel
-        fields = ['id', 'barcode', 'status_code', 'signature', 'recipient']
+        fields = ['id', 'barcode', 'signature_required', 'recipient', 'shipping_statuses']
+

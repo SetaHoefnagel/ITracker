@@ -23,7 +23,6 @@ class Parcel(models.Model):
     id = models.UUIDField(default=uuid4, primary_key=True)
     barcode = models.CharField(default=generate_barcode, max_length=21)
     recipient = models.ForeignKey('Recipient', on_delete=models.CASCADE)
-    status_code = models.CharField(choices=parcel_status, max_length=32)
     signature_required = models.BooleanField()
 
     def __str__(self):
@@ -33,7 +32,7 @@ class ShippingStatus(models.Model):
     status = models.CharField(choices=parcel_status, max_length=32)
     updated = models.DateTimeField(default=datetime.datetime.now)
     description = models.TextField()
-    parcel = models.ForeignKey('Parcel', on_delete=models.CASCADE)
+    parcel = models.ForeignKey('Parcel', related_name="shipping_statuses", on_delete=models.CASCADE)
 
     def __str__(self):
         return '%s - %s... ' % (self.status, self.description[:30])
@@ -47,6 +46,7 @@ class Recipient(models.Model):
     first_name = models.CharField(max_length=63)
     last_name = models.CharField(max_length=63)
     address = models.CharField(max_length=63)
+    telephone = models.CharField(max_length=20)
     zip = models.CharField(max_length=7)
 
     def __str__(self):
