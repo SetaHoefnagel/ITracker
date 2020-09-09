@@ -57,17 +57,30 @@ Beside all the requirements the courier had, there are some requirements mandato
   * This API call is used to get the data of a parcel, based on the code
   * RETURN JSON: 
 ```
-{
-    "id": "UUID",
-    "barcode": "SDHL_<16HEX_code>",
-    "status_code": "string",
-    "signature": boolean,
-    "recipient": {
-        "id": "UUID",
-        "first_name": "string",
-        "last_name": "string",
-        "address": "string",
-        "zip": "string"
-    }
-}
+  {
+      "id": UUID,
+      "barcode": "SDHL_<16HEX_CODE>",
+      "signature_required": boolean,
+      "recipient": {
+          "id":UUID,
+          "full_name": string,
+          "telephone": string,
+          "address": string,
+          "zip": string
+      },
+      "shipping_statuses": [
+          {
+              "status": string,
+              "updated": datetime,
+              "description": string
+          },
+      ]
+  }
 ```
+```
+## Screenshots of the product
+<img src="./images/homescreen.png" >
+<img src="./images/parcel-request.png" >
+<img src="./images/parcel-response.png" >
+<img src="./images/parcel-api example.png" >
+  
