@@ -1,11 +1,12 @@
 from django.db import models
 
 from uuid import uuid4
-import random
+import random, datetime
 
 parcel_status = (
     ('not_shipped', 'Not shipped'),
     ('sent_distribution', 'sent to distribution center'),
+    ('warehouse_distribution', 'Warehouse of distribution center'),
     ('sorted_distribution', 'sorted at distribution center'),
     ('shipped', 'Shipped'),
     ('delivered', 'Delivered'),
@@ -23,10 +24,22 @@ class Parcel(models.Model):
     barcode = models.CharField(default=generate_barcode, max_length=21)
     recipient = models.ForeignKey('Recipient', on_delete=models.CASCADE)
     status_code = models.CharField(choices=parcel_status, max_length=32)
-    signature = models.BooleanField()
+    signature_required = models.BooleanField()
 
     def __str__(self):
-        return '%s %s ' % (self.barcode, self.status_code)
+        return '%s ' % (self.barcode)
+
+class ShippingStatus(models.Model):
+    status = models.CharField(choices=parcel_status, max_length=32)
+    updated = models.DateTimeField(default=datetime.datetime.now)
+    description = models.TextField()
+    parcel = models.ForeignKey('Parcel', on_delete=models.CASCADE)
+
+    def __str__(self):
+        return '%s - %s... ' % (self.status, self.description[:30])
+
+    class Meta:
+        unique_together = ['status', 'parcel']
 
 
 class Recipient(models.Model):
