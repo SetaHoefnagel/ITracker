@@ -60,7 +60,7 @@ class Tracker extends Component {
   render() {
     return (
             <div className="card-body">
-              {this.state.parcel != null ? <Redirect to={`/parcel/${this.state.code}`} /> : ""}
+              {this.state.parcel != null ? <Redirect to={{ pathname:`/parcel/${this.state.code}`, state: {parcel: this.state.parcel} }} push /> : ""}
               <p>
                 Trackers zijn korte codes waarmee u uw pakketten kunt volgen. Deze codes ontvangt u bij het bestellen van een product.  
               </p>
