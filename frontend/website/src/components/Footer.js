@@ -6,9 +6,9 @@ import './../scss/Footer.scss';
 class Footer extends Component {
   render() {
     return (
-      <footer className="container-fluid bg-secondary">
+      <footer className="container-fluid bg-secondary footer">
         <div className="row">
-          <div className="col-sm-12 col-md-6">
+          <div className="col-sm-12">
           <p>
             <img className="inline-logo" src={tracker_logo} alt="ITracker"/>
             &nbsp; is een product van &nbsp;

@@ -1,12 +1,21 @@
 .main {
-    background: 
-    linear-gradient(to right, transparent 0%,#ffffffee 40%, #ffffffff 50%) no-repeat, 
-    url(./../files/images/man-deliver-package.jpg) left top no-repeat, 
-    linear-gradient(to right, #ffffffff 50%, #ffffffee 60%, transparent 100%) right no-repeat, 
-    url(./../files/images/man-looking-at-tv-tablet-in-hand.jpg) right top no-repeat,
-        ;
+    background:
+      linear-gradient(to right, transparent 0%,#ffffffee 40%, #ffffffff 50%, #ffffffee 60%, transparent 100%) no-repeat,
+      url(./../files/images/background.jpg) no-repeat;
     min-height: 600px;
-    background-size: 50% 100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+     -o-background-size: cover;
+     background-size: cover;
+    background-position: 50% 50%;
+
+     @media only screen and(min-width: 600px){
+         background:
+           linear-gradient(to right, transparent 0%,#ffffffee 20%, #ffffffff 50%, #ffffffee 80%, transparent 100%) no-repeat,
+           url(./../files/images/background.jpg) no-repeat;
+         background-size: cover;
+        background-position: 50% 50%;
+     }
 
     position: relative;
     
@@ -14,4 +23,20 @@
         padding-top: 200px;
         padding-bottom: 200px;
     }
-}    
+}
+
+.push {
+  min-height: 100%;
+  /* equal to footer height */
+    margin-bottom: -64px;
+    &:after {
+      content: "";
+      display: block;
+    }
+}
+
+.footer, .push:after {
+  /* .push must be the same height as footer */
+    height: 64px;
+}
+

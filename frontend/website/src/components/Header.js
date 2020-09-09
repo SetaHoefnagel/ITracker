@@ -15,10 +15,10 @@ class Header extends Component {
     return (
       <header className="container-fluid">
         <div className="row">
-          <div className="col-sm-3">
+          <div className="col-6 col-sm-3 col-lg-2">
             <h1><img className="logo" src={tracker_logo} alt="ITracker"/></h1>
           </div>
-          <div className="col-sm-3 offset-sm-6">
+          <div className="col-6 col-sm-3 offset-sm-6 offset-lg-8 col-lg-2">
             <Link to="/about" >
               <img className="logo" src={sdhl_logo} alt="Sneller Dan Het Licht"/>
             </Link>
