@@ -77,7 +77,7 @@ Beside all the requirements the courier had, there are some requirements mandato
       ]
   }
 ```
-```
+
 ## Screenshots of the product
 <img src="./images/homescreen.png" >
 <img src="./images/parcel-request.png" >
